@@ -28,6 +28,8 @@
     ("aurora-bg"       . "#263238")
     ("aurora-bg+05"    . "#494949")
     ("aurora-bg+1"     . "#263038")
+    ("aurora-bg+2"     . "#263038")
+    ("aurora-bg+3"     . "#455a64")
     ("aurora-red"      . "#74CBC4")
     ("aurora-orange"   . "#C2E982")
     ("aurora-yellow"   . "#FFEB95")
@@ -36,7 +38,7 @@
     ("aurora-green+1"  . "#9FAA9B")
     ("aurora-green+2"  . "#9FC59F")
     ("aurora-green+3"  . "#859900")
-    ("aurora-green+4"  . "#CDD3D3")
+    ("aurora-green+4"  . "#F77669")
     ("aurora-cyan"     . "#FF516D")
     ("aurora-blue+1"   . "#74CBC4")
     ("aurora-blue"     . "#82B1FF")
@@ -78,7 +80,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; compilation
    `(compilation-column-face ((t (:foreground ,aurora-yellow))))
    `(compilation-enter-directory-face ((t (:foreground ,aurora-green))))
-   `(compilation-error-face ((t (:foreground ,aurora-cyan :weight bold :underline t))))
+   `(compilation-error-face ((t (:foreground ,aurora-red :weight bold :underline t))))
    `(compilation-face ((t (:foreground ,aurora-fg))))
    `(compilation-info-face ((t (:foreground ,aurora-blue))))
    `(compilation-info ((t (:foreground ,aurora-green+4 :underline t))))
@@ -92,13 +94,13 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(compilation-mode-line-run ((t (:foreground ,aurora-yellow :weight bold))))
 ;;;;; grep
    `(grep-context-face ((t (:foreground ,aurora-fg))))
-   `(grep-error-face ((t (:foreground ,aurora-cyan :weight bold :underline t))))
+   `(grep-error-face ((t (:foreground ,aurora-red :weight bold :underline t))))
    `(grep-hit-face ((t (:foreground ,aurora-blue))))
    `(grep-match-face ((t (:foreground ,aurora-orange :weight bold))))
    `(match ((t (:background ,aurora-bg-1 :foreground ,aurora-orange :weight bold))))
 ;;;;; isearch
-   `(isearch ((t (:foreground ,aurora-yellow+1 :weight bold :background ,aurora-bg+1))))
-   `(isearch-fail ((t (:foreground ,aurora-fg :background ,aurora-cyan))))
+   `(isearch ((t (:foreground ,aurora-yellow+1 :weight bold :background ,aurora-bg+2))))
+   `(isearch-fail ((t (:foreground ,aurora-fg :background ,aurora-red))))
    `(lazy-highlight ((t (:foreground ,aurora-yellow+1 :weight bold :background ,aurora-bg-05))))
 
    `(menu ((t (:foreground ,aurora-fg :background ,aurora-bg))))
@@ -115,7 +117,7 @@ Also bind `class' to ((class color) (min-colors 89))."
                       :box (:line-width -1 :style released-button)))))
    `(region ((,class (:background ,aurora-bg-1))
              (t :inverse-video t)))
-   `(secondary-selection ((t (:background ,aurora-bg+1))))
+   `(secondary-selection ((t (:background ,aurora-bg+2))))
    `(trailing-whitespace ((t (:background ,aurora-red))))
    `(vertical-border ((t (:foreground ,aurora-fg))))
 ;;;;; font lock
@@ -140,19 +142,19 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(newsticker-date-face ((t (:foreground ,aurora-fg))))
    `(newsticker-default-face ((t (:foreground ,aurora-fg))))
    `(newsticker-enclosure-face ((t (:foreground ,aurora-green+3))))
-   `(newsticker-extra-face ((t (:foreground ,aurora-bg+1 :height 0.8))))
+   `(newsticker-extra-face ((t (:foreground ,aurora-bg+2 :height 0.8))))
    `(newsticker-feed-face ((t (:foreground ,aurora-fg))))
    `(newsticker-immortal-item-face ((t (:foreground ,aurora-green))))
    `(newsticker-new-item-face ((t (:foreground ,aurora-blue))))
    `(newsticker-obsolete-item-face ((t (:foreground ,aurora-red))))
-   `(newsticker-old-item-face ((t (:foreground ,aurora-bg+1))))
+   `(newsticker-old-item-face ((t (:foreground ,aurora-bg+3))))
    `(newsticker-statistics-face ((t (:foreground ,aurora-fg))))
    `(newsticker-treeview-face ((t (:foreground ,aurora-fg))))
    `(newsticker-treeview-immortal-face ((t (:foreground ,aurora-green))))
    `(newsticker-treeview-listwindow-face ((t (:foreground ,aurora-fg))))
    `(newsticker-treeview-new-face ((t (:foreground ,aurora-blue :weight bold))))
    `(newsticker-treeview-obsolete-face ((t (:foreground ,aurora-red))))
-   `(newsticker-treeview-old-face ((t (:foreground ,aurora-bg+1))))
+   `(newsticker-treeview-old-face ((t (:foreground ,aurora-bg+3))))
    `(newsticker-treeview-selection-face ((t (:background ,aurora-bg-1 :foreground ,aurora-yellow))))
 ;;;; Third-party
 ;;;;; ace-jump
@@ -177,7 +179,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(font-latex-string-face ((t (:inherit ,font-lock-string-face))))
    `(font-latex-math-face ((t (:foreground ,aurora-orange))))
 ;;;;; auto-complete
-   `(ac-candidate-face ((t (:background ,aurora-bg+1 :foreground ,aurora-bg-2))))
+   `(ac-candidate-face ((t (:background ,aurora-bg+3 :foreground ,aurora-bg-2))))
    `(ac-selection-face ((t (:background ,aurora-blue :foreground ,aurora-fg))))
    `(popup-tip-face ((t (:background ,aurora-yellow+1 :foreground ,aurora-bg-2))))
    `(popup-scroll-bar-foreground-face ((t (:background ,aurora-blue))))
@@ -213,18 +215,18 @@ Also bind `class' to ((class color) (min-colors 89))."
                  (t (:foreground ,aurora-green :background nil))))
    `(diff-changed ((t (:foreground ,aurora-yellow))))
    `(diff-removed ((,class (:foreground ,aurora-red :background nil))
-                   (t (:foreground ,aurora-cyan :background nil))))
+                   (t (:foreground ,aurora-red :background nil))))
    `(diff-refine-added ((t :inherit diff-added :weight bold)))
    `(diff-refine-change ((t :inherit diff-changed :weight bold)))
    `(diff-refine-removed ((t :inherit diff-removed :weight bold)))
-   `(diff-header ((,class (:background ,aurora-bg+1))
+   `(diff-header ((,class (:background ,aurora-bg+2))
                   (t (:background ,aurora-fg :foreground ,aurora-bg))))
    `(diff-file-header
-     ((,class (:background ,aurora-bg+1 :foreground ,aurora-fg :bold t))
+     ((,class (:background ,aurora-bg+2 :foreground ,aurora-fg :bold t))
       (t (:background ,aurora-fg :foreground ,aurora-bg :bold t))))
 ;;;;; diff-hl
    `(diff-hl-change ((,class (:foreground ,aurora-blue :background ,aurora-bg-05))))
-   `(diff-hl-delete ((,class (:foreground ,aurora-cyan :background ,aurora-bg-05))))
+   `(diff-hl-delete ((,class (:foreground ,aurora-red :background ,aurora-bg-05))))
    `(diff-hl-insert ((,class (:foreground ,aurora-green+1 :background ,aurora-bg-05))))
    `(diff-hl-unknown ((,class (:foreground ,aurora-yellow :background ,aurora-bg-05))))
 ;;;;; dim-autoload
@@ -250,27 +252,27 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(diredp-no-priv ((t (:foreground ,aurora-fg))))
    `(diredp-number ((t (:foreground ,aurora-green+1))))
    `(diredp-other-priv ((t (:foreground ,aurora-yellow))))
-   `(diredp-rare-priv ((t (:foreground ,aurora-cyan))))
+   `(diredp-rare-priv ((t (:foreground ,aurora-red))))
    `(diredp-read-priv ((t (:foreground ,aurora-green))))
    `(diredp-symlink ((t (:foreground ,aurora-yellow))))
    `(diredp-write-priv ((t (:foreground ,aurora-magenta))))
 ;;;;; ediff
-   `(ediff-current-diff-A ((t (:foreground ,aurora-fg :background ,aurora-cyan))))
-   `(ediff-current-diff-Ancestor ((t (:foreground ,aurora-fg :background ,aurora-cyan))))
+   `(ediff-current-diff-A ((t (:foreground ,aurora-fg :background ,aurora-red))))
+   `(ediff-current-diff-Ancestor ((t (:foreground ,aurora-fg :background ,aurora-red))))
    `(ediff-current-diff-B ((t (:foreground ,aurora-fg :background ,aurora-green))))
    `(ediff-current-diff-C ((t (:foreground ,aurora-fg :background ,aurora-blue))))
    `(ediff-even-diff-A ((t (:background ,aurora-bg+1))))
    `(ediff-even-diff-Ancestor ((t (:background ,aurora-bg+1))))
    `(ediff-even-diff-B ((t (:background ,aurora-bg+1))))
    `(ediff-even-diff-C ((t (:background ,aurora-bg+1))))
-   `(ediff-fine-diff-A ((t (:foreground ,aurora-fg :background ,aurora-cyan :weight bold))))
-   `(ediff-fine-diff-Ancestor ((t (:foreground ,aurora-fg :background ,aurora-cyan weight bold))))
+   `(ediff-fine-diff-A ((t (:foreground ,aurora-fg :background ,aurora-red :weight bold))))
+   `(ediff-fine-diff-Ancestor ((t (:foreground ,aurora-fg :background ,aurora-red weight bold))))
    `(ediff-fine-diff-B ((t (:foreground ,aurora-fg :background ,aurora-green :weight bold))))
    `(ediff-fine-diff-C ((t (:foreground ,aurora-fg :background ,aurora-blue :weight bold ))))
-   `(ediff-odd-diff-A ((t (:background ,aurora-bg+1))))
-   `(ediff-odd-diff-Ancestor ((t (:background ,aurora-bg+1))))
-   `(ediff-odd-diff-B ((t (:background ,aurora-bg+1))))
-   `(ediff-odd-diff-C ((t (:background ,aurora-bg+1))))
+   `(ediff-odd-diff-A ((t (:background ,aurora-bg+2))))
+   `(ediff-odd-diff-Ancestor ((t (:background ,aurora-bg+2))))
+   `(ediff-odd-diff-B ((t (:background ,aurora-bg+2))))
+   `(ediff-odd-diff-C ((t (:background ,aurora-bg+2))))
 ;;;;; egg
    `(egg-text-base ((t (:foreground ,aurora-fg))))
    `(egg-help-header-1 ((t (:foreground ,aurora-yellow))))
@@ -279,7 +281,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(egg-branch-mono ((t (:foreground ,aurora-yellow))))
    `(egg-term ((t (:foreground ,aurora-yellow))))
    `(egg-diff-add ((t (:foreground ,aurora-green+4))))
-   `(egg-diff-del ((t (:foreground ,aurora-cyan))))
+   `(egg-diff-del ((t (:foreground ,aurora-red))))
    `(egg-diff-file-header ((t (:foreground ,aurora-yellow+1))))
    `(egg-section-title ((t (:foreground ,aurora-yellow))))
    `(egg-stash-mono ((t (:foreground ,aurora-green+4))))
@@ -288,7 +290,7 @@ Also bind `class' to ((class color) (min-colors 89))."
                                  :weight bold))))
    `(w3m-arrived-anchor ((t (:foreground ,aurora-yellow+1
                                          :underline t :weight normal))))
-   `(w3m-form ((t (:foreground ,aurora-cyan :underline t))))
+   `(w3m-form ((t (:foreground ,aurora-red :underline t))))
    `(w3m-header-line-location-title ((t (:foreground ,aurora-yellow
                                                      :underline t :weight bold))))
    '(w3m-history-current-url ((t (:inherit match))))
@@ -322,11 +324,11 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ert-test-result-unexpected ((t (:foreground ,aurora-red :background ,aurora-bg))))
 ;;;;; eshell
    `(eshell-prompt ((t (:foreground ,aurora-yellow :weight bold))))
-   `(eshell-ls-archive ((t (:foreground ,aurora-cyan :weight bold))))
+   `(eshell-ls-archive ((t (:foreground ,aurora-red :weight bold))))
    `(eshell-ls-backup ((t (:inherit font-lock-comment-face))))
    `(eshell-ls-clutter ((t (:inherit font-lock-comment-face))))
    `(eshell-ls-directory ((t (:foreground ,aurora-blue+1 :weight bold))))
-   `(eshell-ls-executable ((t (:foreground ,aurora-cyan :weight bold))))
+   `(eshell-ls-executable ((t (:foreground ,aurora-red :weight bold))))
    `(eshell-ls-unreadable ((t (:foreground ,aurora-fg))))
    `(eshell-ls-missing ((t (:inherit font-lock-warning-face))))
    `(eshell-ls-product ((t (:inherit font-lock-doc-face))))
@@ -337,8 +339,8 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; flycheck
    `(flycheck-error
      ((((supports :underline (:style wave)))
-       (:underline (:style wave :color ,aurora-cyan) :inherit unspecified))
-      (t (:foreground ,aurora-cyan :weight bold :underline t))))
+       (:underline (:style wave :color ,aurora-red) :inherit unspecified))
+      (t (:foreground ,aurora-red :weight bold :underline t))))
    `(flycheck-warning
      ((((supports :underline (:style wave)))
        (:underline (:style wave :color ,aurora-yellow) :inherit unspecified))
@@ -347,7 +349,7 @@ Also bind `class' to ((class color) (min-colors 89))."
      ((((supports :underline (:style wave)))
        (:underline (:style wave :color ,aurora-cyan) :inherit unspecified))
       (t (:foreground ,aurora-cyan :weight bold :underline t))))
-   `(flycheck-fringe-error ((t (:foreground ,aurora-cyan :weight bold))))
+   `(flycheck-fringe-error ((t (:foreground ,aurora-red :weight bold))))
    `(flycheck-fringe-warning ((t (:foreground ,aurora-yellow :weight bold))))
    `(flycheck-fringe-info ((t (:foreground ,aurora-cyan :weight bold))))
 ;;;;; flymake
@@ -355,7 +357,7 @@ Also bind `class' to ((class color) (min-colors 89))."
      ((((supports :underline (:style wave)))
        (:underline (:style wave :color ,aurora-red)
                    :inherit unspecified :foreground unspecified :background unspecified))
-      (t (:foreground ,aurora-cyan :weight bold :underline t))))
+      (t (:foreground ,aurora-red :weight bold :underline t))))
    `(flymake-warnline
      ((((supports :underline (:style wave)))
        (:underline (:style wave :color ,aurora-orange)
@@ -374,7 +376,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(flyspell-incorrect
      ((((supports :underline (:style wave)))
        (:underline (:style wave :color ,aurora-red) :inherit unspecified))
-      (t (:foreground ,aurora-cyan :weight bold :underline t))))
+      (t (:foreground ,aurora-red :weight bold :underline t))))
 ;;;;; full-ack
    `(ack-separator ((t (:foreground ,aurora-fg))))
    `(ack-file ((t (:foreground ,aurora-blue))))
@@ -441,15 +443,15 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(gnus-cite-5 ((t (:foreground ,aurora-green+1))))
    `(gnus-cite-6 ((t (:foreground ,aurora-green))))
    `(gnus-cite-7 ((t (:foreground ,aurora-red))))
-   `(gnus-cite-8 ((t (:foreground ,aurora-cyan))))
-   `(gnus-cite-9 ((t (:foreground ,aurora-cyan))))
+   `(gnus-cite-8 ((t (:foreground ,aurora-red))))
+   `(gnus-cite-9 ((t (:foreground ,aurora-red))))
    `(gnus-group-news-1-empty ((t (:foreground ,aurora-yellow))))
    `(gnus-group-news-2-empty ((t (:foreground ,aurora-green+3))))
    `(gnus-group-news-3-empty ((t (:foreground ,aurora-green+1))))
    `(gnus-group-news-4-empty ((t (:foreground ,aurora-blue))))
    `(gnus-group-news-5-empty ((t (:foreground ,aurora-blue))))
-   `(gnus-group-news-6-empty ((t (:foreground ,aurora-bg+1))))
-   `(gnus-group-news-low-empty ((t (:foreground ,aurora-bg+1))))
+   `(gnus-group-news-6-empty ((t (:foreground ,aurora-bg+2))))
+   `(gnus-group-news-low-empty ((t (:foreground ,aurora-bg+2))))
    `(gnus-signature ((t (:foreground ,aurora-yellow))))
    `(gnus-x ((t (:background ,aurora-fg :foreground ,aurora-bg))))
 ;;;;; guide-key
@@ -513,17 +515,17 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ido-first-match ((t (:foreground ,aurora-yellow :weight bold))))
    `(ido-only-match ((t (:foreground ,aurora-orange :weight bold))))
    `(ido-subdir ((t (:foreground ,aurora-yellow))))
-   `(ido-indicator ((t (:foreground ,aurora-yellow :background ,aurora-cyan))))
+   `(ido-indicator ((t (:foreground ,aurora-yellow :background ,aurora-red))))
 ;;;;; iedit-mode
-   `(iedit-occurrence ((t (:background ,aurora-bg+1 :weight bold))))
+   `(iedit-occurrence ((t (:background ,aurora-bg+2 :weight bold))))
 ;;;;; jabber-mode
    `(jabber-roster-user-away ((t (:foreground ,aurora-green+2))))
    `(jabber-roster-user-online ((t (:foreground ,aurora-blue))))
-   `(jabber-roster-user-dnd ((t (:foreground ,aurora-cyan))))
+   `(jabber-roster-user-dnd ((t (:foreground ,aurora-red))))
    `(jabber-rare-time-face ((t (:foreground ,aurora-green+1))))
    `(jabber-chat-prompt-local ((t (:foreground ,aurora-blue))))
-   `(jabber-chat-prompt-foreign ((t (:foreground ,aurora-cyan))))
-   `(jabber-activity-face((t (:foreground ,aurora-cyan))))
+   `(jabber-chat-prompt-foreign ((t (:foreground ,aurora-red))))
+   `(jabber-activity-face((t (:foreground ,aurora-red))))
    `(jabber-activity-personal-face ((t (:foreground ,aurora-blue+1))))
    `(jabber-title-small ((t (:height 1.1 :weight bold))))
    `(jabber-title-medium ((t (:height 1.2 :weight bold))))
@@ -537,7 +539,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(js2-function-param ((t (:foreground, aurora-green+3))))
    `(js2-external-variable ((t (:foreground ,aurora-orange))))
 ;;;;; ledger-mode
-   `(ledger-font-payee-uncleared-face ((t (:foreground ,aurora-cyan :weight bold))))
+   `(ledger-font-payee-uncleared-face ((t (:foreground ,aurora-red :weight bold))))
    `(ledger-font-payee-cleared-face ((t (:foreground ,aurora-fg :weight normal))))
    `(ledger-font-xact-highlight-face ((t (:background ,aurora-bg+1))))
    `(ledger-font-pending-face ((t (:foreground ,aurora-orange weight: normal))))
@@ -550,7 +552,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ledger-occur-narrowed-face ((t (:foreground ,aurora-fg-1 :invisible t))))
    `(ledger-occur-xact-face ((t (:background ,aurora-bg+1))))
    `(ledger-font-comment-face ((t (:foreground ,aurora-green))))
-   `(ledger-font-reconciler-uncleared-face ((t (:foreground ,aurora-cyan :weight bold))))
+   `(ledger-font-reconciler-uncleared-face ((t (:foreground ,aurora-red :weight bold))))
    `(ledger-font-reconciler-cleared-face ((t (:foreground ,aurora-fg :weight normal))))
    `(ledger-font-reconciler-pending-face ((t (:foreground ,aurora-orange :weight normal))))
    `(ledger-font-report-clickable-face ((t (:foreground ,aurora-orange :weight normal))))
@@ -560,7 +562,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(macrostep-gensym-1
      ((t (:foreground ,aurora-green+2 :background ,aurora-bg-1))))
    `(macrostep-gensym-2
-     ((t (:foreground ,aurora-cyan :background ,aurora-bg-1))))
+     ((t (:foreground ,aurora-red :background ,aurora-bg-1))))
    `(macrostep-gensym-3
      ((t (:foreground ,aurora-blue+1 :background ,aurora-bg-1))))
    `(macrostep-gensym-4
@@ -615,7 +617,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(mew-face-mark-delete ((t (:foreground ,aurora-red))))
    `(mew-face-mark-unlink ((t (:foreground ,aurora-yellow))))
    `(mew-face-mark-refile ((t (:foreground ,aurora-green))))
-   `(mew-face-mark-unread ((t (:foreground ,aurora-cyan))))
+   `(mew-face-mark-unread ((t (:foreground ,aurora-red))))
    `(mew-face-eof-message ((t (:foreground ,aurora-green))))
    `(mew-face-eof-part ((t (:foreground ,aurora-yellow))))
 ;;;;; mic-paren
@@ -635,7 +637,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(nav-face-dir ((t (:foreground ,aurora-green))))
    `(nav-face-hdir ((t (:foreground ,aurora-red))))
    `(nav-face-file ((t (:foreground ,aurora-fg))))
-   `(nav-face-hfile ((t (:foreground ,aurora-cyan))))
+   `(nav-face-hfile ((t (:foreground ,aurora-red))))
 ;;;;; mu4e
    `(mu4e-cited-1-face ((t (:foreground ,aurora-blue    :slant italic))))
    `(mu4e-cited-2-face ((t (:foreground ,aurora-green+2 :slant italic))))
@@ -644,13 +646,13 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(mu4e-cited-5-face ((t (:foreground ,aurora-blue  :slant italic))))
    `(mu4e-cited-6-face ((t (:foreground ,aurora-green :slant italic))))
    `(mu4e-cited-7-face ((t (:foreground ,aurora-blue    :slant italic))))
-   `(mu4e-replied-face ((t (:foreground ,aurora-bg+1))))
-   `(mu4e-trashed-face ((t (:foreground ,aurora-bg+1 :strike-through t))))
+   `(mu4e-replied-face ((t (:foreground ,aurora-bg+3))))
+   `(mu4e-trashed-face ((t (:foreground ,aurora-bg+3 :strike-through t))))
 ;;;;; mumamo
    `(mumamo-background-chunk-major ((t (:background nil))))
    `(mumamo-background-chunk-submode1 ((t (:background ,aurora-bg-1))))
-   `(mumamo-background-chunk-submode2 ((t (:background ,aurora-bg+1))))
-   `(mumamo-background-chunk-submode3 ((t (:background ,aurora-bg+1))))
+   `(mumamo-background-chunk-submode2 ((t (:background ,aurora-bg+2))))
+   `(mumamo-background-chunk-submode3 ((t (:background ,aurora-bg+3))))
    `(mumamo-background-chunk-submode4 ((t (:background ,aurora-bg+1))))
 ;;;;; org-mode
    `(org-agenda-date-today
@@ -658,10 +660,10 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(org-agenda-structure
      ((t (:inherit font-lock-comment-face))))
    `(org-archived ((t (:foreground ,aurora-fg :weight bold))))
-   `(org-checkbox ((t (:background ,aurora-bg+1 :foreground ,aurora-fg+1
+   `(org-checkbox ((t (:background ,aurora-bg+2 :foreground ,aurora-fg+1
                                    :box (:line-width 1 :style released-button)))))
    `(org-date ((t (:foreground ,aurora-blue :underline t))))
-   `(org-deadline-announce ((t (:foreground ,aurora-cyan))))
+   `(org-deadline-announce ((t (:foreground ,aurora-red))))
    `(org-done ((t (:bold t :weight bold :foreground ,aurora-green+3))))
    `(org-formula ((t (:foreground ,aurora-yellow+1))))
    `(org-headline-done ((t (:foreground ,aurora-green+3))))
@@ -672,7 +674,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(org-level-4 ((t (:foreground ,aurora-yellow+1))))
    `(org-level-5 ((t (:foreground ,aurora-cyan))))
    `(org-level-6 ((t (:foreground ,aurora-green+2))))
-   `(org-level-7 ((t (:foreground ,aurora-cyan))))
+   `(org-level-7 ((t (:foreground ,aurora-red))))
    `(org-level-8 ((t (:foreground ,aurora-blue))))
    `(org-link ((t (:foreground ,aurora-yellow+1 :underline t))))
    `(org-scheduled ((t (:foreground ,aurora-green+4))))
@@ -683,13 +685,13 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(org-table ((t (:foreground ,aurora-green+2))))
    `(org-tag ((t (:bold t :weight bold))))
    `(org-time-grid ((t (:foreground ,aurora-orange))))
-   `(org-todo ((t (:background, aurora-cyan :bold t :foreground ,aurora-bg :weight bold))))
+   `(org-todo ((t (:background, aurora-red :bold t :foreground ,aurora-bg :weight bold))))
    `(org-upcoming-deadline ((t (:inherit font-lock-keyword-face))))
    `(org-warning ((t (:bold t :foreground ,aurora-red :weight bold :underline nil))))
    `(org-column ((t (:background ,aurora-bg-1))))
    `(org-column-title ((t (:background ,aurora-bg-1 :underline t :weight bold))))
    `(org-mode-line-clock ((t (:foreground ,aurora-fg :background ,aurora-bg-1))))
-   `(org-mode-line-clock-overrun ((t (:foreground ,aurora-bg :background ,aurora-cyan))))
+   `(org-mode-line-clock-overrun ((t (:foreground ,aurora-bg :background ,aurora-red))))
    `(org-ellipsis ((t (:foreground ,aurora-yellow :underline t))))
    `(org-footnote ((t (:foreground ,aurora-cyan :underline t))))
 ;;;;; outline
@@ -699,7 +701,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(outline-4 ((t (:foreground ,aurora-yellow+1))))
    `(outline-5 ((t (:foreground ,aurora-cyan))))
    `(outline-6 ((t (:foreground ,aurora-green+2))))
-   `(outline-7 ((t (:foreground ,aurora-cyan))))
+   `(outline-7 ((t (:foreground ,aurora-red))))
    `(outline-8 ((t (:foreground ,aurora-blue))))
 ;;;;; p4
    `(p4-depot-added-face ((t :inherit diff-added)))
@@ -715,24 +717,24 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(persp-selected-face ((t (:foreground ,aurora-yellow+1 :inherit mode-line))))
 ;;;;; powerline
    `(powerline-active1 ((t (:background ,aurora-bg-05 :inherit mode-line))))
-   `(powerline-active2 ((t (:background ,aurora-bg+1 :inherit mode-line))))
+   `(powerline-active2 ((t (:background ,aurora-bg+2 :inherit mode-line))))
    `(powerline-inactive1 ((t (:background ,aurora-bg+1 :inherit mode-line-inactive))))
-   `(powerline-inactive2 ((t (:background ,aurora-bg+1 :inherit mode-line-inactive))))
+   `(powerline-inactive2 ((t (:background ,aurora-bg+3 :inherit mode-line-inactive))))
 ;;;;; proofgeneral
    `(proof-active-area-face ((t (:underline t))))
-   `(proof-boring-face ((t (:foreground ,aurora-fg :background ,aurora-bg+1))))
+   `(proof-boring-face ((t (:foreground ,aurora-fg :background ,aurora-bg+2))))
    `(proof-command-mouse-highlight-face ((t (:inherit proof-mouse-highlight-face))))
    `(proof-debug-message-face ((t (:inherit proof-boring-face))))
    `(proof-declaration-name-face ((t (:inherit font-lock-keyword-face :foreground nil))))
    `(proof-eager-annotation-face ((t (:foreground ,aurora-bg :background ,aurora-orange))))
-   `(proof-error-face ((t (:foreground ,aurora-fg :background ,aurora-cyan))))
+   `(proof-error-face ((t (:foreground ,aurora-fg :background ,aurora-red))))
    `(proof-highlight-dependency-face ((t (:foreground ,aurora-bg :background ,aurora-yellow))))
    `(proof-highlight-dependent-face ((t (:foreground ,aurora-bg :background ,aurora-orange))))
    `(proof-locked-face ((t (:background ,aurora-blue))))
    `(proof-mouse-highlight-face ((t (:foreground ,aurora-bg :background ,aurora-orange))))
-   `(proof-queue-face ((t (:background ,aurora-cyan))))
+   `(proof-queue-face ((t (:background ,aurora-red))))
    `(proof-region-mouse-highlight-face ((t (:inherit proof-mouse-highlight-face))))
-   `(proof-script-highlight-error-face ((t (:background ,aurora-cyan))))
+   `(proof-script-highlight-error-face ((t (:background ,aurora-red))))
    `(proof-tacticals-name-face ((t (:inherit font-lock-constant-face :foreground nil :background ,aurora-bg))))
    `(proof-tactics-name-face ((t (:inherit font-lock-constant-face :foreground nil :background ,aurora-bg))))
    `(proof-warning-face ((t (:foreground ,aurora-bg :background ,aurora-yellow))))
@@ -740,7 +742,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(rainbow-delimiters-depth-1-face ((t (:foreground ,aurora-cyan))))
    `(rainbow-delimiters-depth-2-face ((t (:foreground ,aurora-yellow))))
    `(rainbow-delimiters-depth-3-face ((t (:foreground ,aurora-blue+1))))
-   `(rainbow-delimiters-depth-4-face ((t (:foreground ,aurora-cyan))))
+   `(rainbow-delimiters-depth-4-face ((t (:foreground ,aurora-red))))
    `(rainbow-delimiters-depth-5-face ((t (:foreground ,aurora-green+1))))
    `(rainbow-delimiters-depth-6-face ((t (:foreground ,aurora-blue))))
    `(rainbow-delimiters-depth-7-face ((t (:foreground ,aurora-orange))))
@@ -748,7 +750,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(rainbow-delimiters-depth-9-face ((t (:foreground ,aurora-yellow+1))))
    `(rainbow-delimiters-depth-10-face ((t (:foreground ,aurora-green+2))))
    `(rainbow-delimiters-depth-11-face ((t (:foreground ,aurora-blue+1))))
-   `(rainbow-delimiters-depth-12-face ((t (:foreground ,aurora-cyan))))
+   `(rainbow-delimiters-depth-12-face ((t (:foreground ,aurora-red))))
 ;;;;; rainbow-delimiters
    ;; `(rainbow-delimiters-depth-1-face ((t (:foreground ,aurora-fg))))
    ;; `(rainbow-delimiters-depth-2-face ((t (:foreground ,aurora-green+4))))
@@ -798,11 +800,11 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(sh-heredoc     ((t (:foreground ,aurora-yellow :bold t))))
    `(sh-quoted-exec ((t (:foreground ,aurora-red))))
 ;;;;; show-paren
-   `(show-paren-mismatch ((t (:foreground ,aurora-cyan :background ,aurora-bg+1 :weight bold))))
-   `(show-paren-match ((t (:background ,aurora-bg+1 :weight bold))))
+   `(show-paren-mismatch ((t (:foreground ,aurora-red :background ,aurora-bg+3 :weight bold))))
+   `(show-paren-match ((t (:background ,aurora-bg+3 :weight bold))))
 ;;;;; smartparens
-   `(sp-show-pair-mismatch-face ((t (:foreground ,aurora-cyan :background ,aurora-bg+1 :weight bold))))
-   `(sp-show-pair-match-face ((t (:background ,aurora-bg+1 :weight bold))))
+   `(sp-show-pair-mismatch-face ((t (:foreground ,aurora-red :background ,aurora-bg+3 :weight bold))))
+   `(sp-show-pair-match-face ((t (:background ,aurora-bg+3 :weight bold))))
 ;;;;; sml-mode-line
    '(sml-modeline-end-face ((t :inherit default :width condensed)))
 ;;;;; SLIME
@@ -849,8 +851,8 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; term
    `(term-color-black ((t (:foreground ,aurora-bg
                                        :background ,aurora-bg-1))))
-   `(term-color-red ((t (:foreground ,aurora-cyan
-                                       :background ,aurora-cyan))))
+   `(term-color-red ((t (:foreground ,aurora-red
+                                       :background ,aurora-red))))
    `(term-color-green ((t (:foreground ,aurora-green
                                        :background ,aurora-green+2))))
    `(term-color-yellow ((t (:foreground ,aurora-orange
@@ -867,7 +869,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    '(term-default-bg-color ((t (:inherit term-color-black))))
 ;;;;; undo-tree
    `(undo-tree-visualizer-active-branch-face ((t (:foreground ,aurora-fg+1 :weight bold))))
-   `(undo-tree-visualizer-current-face ((t (:foreground ,aurora-cyan :weight bold))))
+   `(undo-tree-visualizer-current-face ((t (:foreground ,aurora-red :weight bold))))
    `(undo-tree-visualizer-default-face ((t (:foreground ,aurora-fg))))
    `(undo-tree-visualizer-register-face ((t (:foreground ,aurora-yellow))))
    `(undo-tree-visualizer-unmodified-face ((t (:foreground ,aurora-cyan))))
@@ -901,7 +903,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; whitespace-mode
    `(whitespace-space ((t (:background ,aurora-bg+1 :foreground ,aurora-bg+1))))
    `(whitespace-hspace ((t (:background ,aurora-bg+1 :foreground ,aurora-bg+1))))
-   `(whitespace-tab ((t (:background ,aurora-cyan))))
+   `(whitespace-tab ((t (:background ,aurora-red))))
    `(whitespace-newline ((t (:foreground ,aurora-bg+1))))
    `(whitespace-trailing ((t (:background ,aurora-red))))
    `(whitespace-line ((t (:background ,aurora-bg :foreground ,aurora-magenta))))
@@ -910,19 +912,19 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(whitespace-empty ((t (:background ,aurora-yellow))))
    `(whitespace-space-after-tab ((t (:background ,aurora-yellow :foreground ,aurora-red))))
 ;;;;; wanderlust
-   `(wl-highlight-folder-few-face ((t (:foreground ,aurora-cyan))))
-   `(wl-highlight-folder-many-face ((t (:foreground ,aurora-cyan))))
+   `(wl-highlight-folder-few-face ((t (:foreground ,aurora-red))))
+   `(wl-highlight-folder-many-face ((t (:foreground ,aurora-red))))
    `(wl-highlight-folder-path-face ((t (:foreground ,aurora-orange))))
    `(wl-highlight-folder-unread-face ((t (:foreground ,aurora-blue))))
    `(wl-highlight-folder-zero-face ((t (:foreground ,aurora-fg))))
    `(wl-highlight-folder-unknown-face ((t (:foreground ,aurora-blue))))
-   `(wl-highlight-message-citation-header ((t (:foreground ,aurora-cyan))))
+   `(wl-highlight-message-citation-header ((t (:foreground ,aurora-red))))
    `(wl-highlight-message-cited-text-1 ((t (:foreground ,aurora-red))))
    `(wl-highlight-message-cited-text-2 ((t (:foreground ,aurora-green+2))))
    `(wl-highlight-message-cited-text-3 ((t (:foreground ,aurora-blue))))
    `(wl-highlight-message-cited-text-4 ((t (:foreground ,aurora-blue+1))))
    `(wl-highlight-message-header-contents-face ((t (:foreground ,aurora-green))))
-   `(wl-highlight-message-headers-face ((t (:foreground ,aurora-cyan))))
+   `(wl-highlight-message-headers-face ((t (:foreground ,aurora-red))))
    `(wl-highlight-message-important-header-contents ((t (:foreground ,aurora-green+2))))
    `(wl-highlight-message-header-contents ((t (:foreground ,aurora-green+1))))
    `(wl-highlight-message-important-header-contents2 ((t (:foreground ,aurora-green+2))))
@@ -955,7 +957,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(fci-rule-color ,aurora-bg-05)
 ;;;;; vc-annotate
    `(vc-annotate-color-map
-     '(( 20. . ,aurora-cyan)
+     '(( 20. . ,aurora-red)
        ( 40. . ,aurora-red)
        ( 60. . ,aurora-orange)
        ( 80. . ,aurora-yellow+1)
@@ -1027,4 +1029,4 @@ This requires library `rainbow-mode'.")
 ;; indent-tabs-mode: nil
 ;; eval: (when (require 'rainbow-mode nil t) (rainbow-mode 1))
 ;; End:
-;;; aurora-theme.el ends here
+;; aurora-theme.el ends here
