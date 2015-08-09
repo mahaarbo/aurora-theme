@@ -1029,4 +1029,4 @@ This requires library `rainbow-mode'.")
 ;; indent-tabs-mode: nil
 ;; eval: (when (require 'rainbow-mode nil t) (rainbow-mode 1))
 ;; End:
-;; aurora-theme.el ends here
+;;; aurora-theme.el ends here
