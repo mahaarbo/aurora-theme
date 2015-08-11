@@ -1,4 +1,4 @@
-;;; aurora-theme.el --- Material theme of SublimeText for Emacs.
+;;; aurora-theme.el --- A theme inspired by SublimeText's Material theme
 
 ;; Author: Luis Cairampoma <redshacker11@gmail.com>
 ;; URL: http://github.com/xzerocode/aurora-theme
@@ -1020,13 +1020,8 @@ This requires library `rainbow-mode'.")
 
 (provide-theme 'aurora)
 
-;;;###autoload
-(add-to-list 'safe-local-eval-forms
-             '(when (require 'rainbow-mode nil t) (rainbow-mode 1)))
-
 ;; Local Variables:
 ;; no-byte-compile: t
 ;; indent-tabs-mode: nil
-;; eval: (when (require 'rainbow-mode nil t) (rainbow-mode 1))
 ;; End:
 ;;; aurora-theme.el ends here
