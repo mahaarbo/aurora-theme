@@ -1,16 +1,17 @@
 ;;; aurora-theme.el --- Material theme of SublimeText for Emacs.
 
 ;; Author: Luis Cairampoma <redshacker11@gmail.com>
-;; URL: http://github.com/xzerocode/aurora-theme
+;; URL: http://github.com/mahaarbo/aurora-theme
 ;; Version: 0.1
 
 ;;; Commentary:
 
-;; This theme is inspired by the popular theme of Sublime Text, 'Material'.
+;; This theme is inspired by the popular theme of Sublime Text, 'Material'. 
 
 ;;; Credits:
 
 ;;  A Mattia Astorino, by the colors that made the end this theme.
+
 
 ;;; Code:
 
